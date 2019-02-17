@@ -89,6 +89,8 @@ namespace UdemyProject
             this.Driver.FindElement(By.TagName("body")).SendKeys(Keys.Control + 1);
             this.Driver.FindElement(By.LinkText("SHOP NOW")).Click();
 
+            IDBefore = String.Join(";", Regex.Matches(this.Url, @"\&OID=(.+?)\&").Cast<Match>().Select(m => m.Groups[1].Value));
+
             if (index == 0)
             {
                 index = 1;
@@ -96,9 +98,6 @@ namespace UdemyProject
                 this.Driver.SwitchTo().Window("tab1");
 
                 this.Driver.Navigate().GoToUrl(Url);
-                IDBefore = String.Join(";", Regex.Matches(Url, @"\&ord=(.+?)\&")
-                                                    .Cast<Match>()
-                                                    .Select(m => m.Groups[1].Value));
             }
             else
             {
@@ -106,14 +105,14 @@ namespace UdemyProject
                 string tab = "tab" + index;
                 string js = String.Format("window.open('', '{0}');", tab);
                 Random rand = new Random();
-                int val = (Min + rand.Next(0, (Max - Min) / 2) * 2) + 1;
-                int after = val + Convert.ToInt32(IDBefore);
+                long val = (Min + rand.Next(0, (Max - Min) / 2) * 2) + 1;
+                long after = val + Convert.ToInt64(IDBefore);
                 this.Url = Url.Replace(IDBefore, after.ToString());
                 this.Driver.ExecuteScript(js);
                 this.Driver.SwitchTo().Window(tab);
 
                 this.Driver.Navigate().GoToUrl(Url);
-                IDBefore = after.ToString();
+                //IDBefore = after.ToString();
             }
         }
 

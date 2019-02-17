@@ -13,3 +13,4 @@ C:\Users\vanda\OneDrive\Documents\Visual Studio 2017\Projects\UdemyProject\Udemy
 C:\Users\vanda\OneDrive\Documents\Visual Studio 2017\Projects\UdemyProject\UdemyProject\bin\Debug\System.Security.AccessControl.dll
 C:\Users\vanda\OneDrive\Documents\Visual Studio 2017\Projects\UdemyProject\UdemyProject\bin\Debug\System.Security.Permissions.dll
 C:\Users\vanda\OneDrive\Documents\Visual Studio 2017\Projects\UdemyProject\UdemyProject\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\vanda\OneDrive\Documents\Visual Studio 2017\Projects\UdemyProject\UdemyProject\obj\Debug\UdemyProject.csprojAssemblyReference.cache
